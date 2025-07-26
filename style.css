@@ -1,0 +1,163 @@
+/* ============================================
+   Portfolio Développeur — Styles Principaux
+   ============================================ */
+
+/* Variables de thème */
+:root {
+  --color-primary: #e63946;
+  --color-text: #333;
+  --color-bg: #f9f9f9;
+  --color-white: #fff;
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --hero-height: 240px; 
+}
+
+/* Reset & global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Main & Section */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#projets.projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Carte Projet */
+.carte-projet {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.carte-projet:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Lien sur toute la carte */
+.lien-carte {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.carte-projet:hover .hero-image {
+  transform: scale(1.05);
+}
+
+/* Contenu Carte */
+.contenu-carte {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Titre du projet */
+.titre-projet {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+}
+
+/* Description */
+.description-projet {
+  font-size: 0.95rem;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* CTA (voir projet) */
+.lien-carte::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  transition: transform var(--transition);
+}
+
+.lien-carte:hover::after {
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+.portfolio-titre {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Ajustement de la grille pour laisser de l’espace au titre */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Section Projets : on décale vers le bas pour le titre */
+#projets.projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Hero-image plus grand */
+.hero-image {
+  width: 100%;
+  height: var(--hero-height);
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+/* Responsive : on réduit un peu sur mobile */
+@media (max-width: 600px) {
+  :root {
+    --hero-height: 180px; /* mobile un peu moins haut */
+  }
+  .portfolio-titre {
+    font-size: 1.75rem;
+    margin: 1.5rem 0 1rem;
+  }
+}
