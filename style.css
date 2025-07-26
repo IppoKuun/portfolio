@@ -14,6 +14,7 @@
     --hero-height: 240px; 
 }
 
+html{scroll-behavior: smooth;}
 /* Reset & global */
 *,
 *::before,
@@ -161,3 +162,272 @@ main {
     margin: 1.5rem 0 1rem;
   }
 }
+
+/* ============================================
+   Variables & Reset
+   ============================================ */
+:root {
+  --color-primary: #e63946;
+  --color-text: #333333;
+  --color-bg: #f9f9f9;
+  --color-white: #ffffff;
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --hero-height: 320px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   Main Container
+   ============================================ */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ============================================
+   HEADER / HERO
+   ============================================ */
+#hero.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: var(--hero-height);
+  background-color: var(--color-white);
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.nav-ancres {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.nav-link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+.section-title {
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  color: var(--color-text);
+}
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services {
+  padding: 0 1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: #555555;
+}
+
+/* ============================================
+   À PROPOS
+   ============================================ */
+.a-propos {
+  padding: 0 1rem;
+}
+
+
+
+/* Pour ne plus afficher l’image sans toucher au HTML */
+.photo-profil {
+  display: none;
+}
+
+
+.apropos-name{
+    align-items: center;
+    font-size: 2.2rem;
+
+}
+/* Et recentrer le contenu de la section "À propos" */
+.apropos-wrapper {
+  display: flex;
+  flex-direction: column; 
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.apropos-content {
+  margin: 0 auto;
+  width: 750px;
+  padding: 2rem;
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact {
+  background-color: var(--color-white);
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin: 2rem 0;
+}
+
+.contact-list {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-icon {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.contact-link {
+  font-size: 1rem;
+  font-weight: 500;
+  vertical-align: middle;
+  transition: color var(--transition);
+}
+
+.contact-link:hover {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+
+  .apropos-wrapper {
+    flex-direction: column;
+    text-align: center;
+    max-width: 500px;
+  }
+  .apropos-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap:2rem;
+  }
+
+  .photo-profil {
+    margin-bottom: 1rem;
+  }
+
+  .nav-ancres {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .services-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Place ça dans ton style.css, sous la section "RESPONSIVE" par exemple */
+.portfolio-grid {
+    padding: 10px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+

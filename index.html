@@ -3,42 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio Développeur</title>
-<link rel="stylesheet" href="style.css">
+  <title>Hippolyte Diallo – Développeur web freelance</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main>
-    <h1 class="portfolio-titre">Mon Portfolio</h1>
-    <section id="projets" class="projets">
-      
-<!-- PROJET 1 : Site de location de voitures -->
-        <article class="carte-projet">
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header id="hero" class="hero">
+    <h1 class="hero-title">
+      Développeur web freelance – <br>
+      Création de sites modernes &amp; optimisés
+    </h1>
+
+    <!-- Menu ancre simple (optionnel) -->
+    <nav class="nav-ancres">
+      <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#a-propos" class="nav-link">À&nbsp;propos</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== SECTION SERVICES ===== -->
+  <section id="services" class="services">
+    <h2 class="section-title">Mes services</h2>
+
+    <div class="services-grid">
+
+      <!-- Service 1 -->
+      <article class="service-card">
+        <i class="ri-computer-line service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Sites vitrines HTML/CSS/JS</h3>
+        <p class="service-desc">
+          Je conçois des sites professionnels, responsive et optimisés pour la conversion.
+        </p>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="service-card">
+        <i class="ri-brain-line service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Développement assisté par IA</h3>
+        <p class="service-desc">
+          Grâce à l’IA, je livre rapidement du code propre et maintenable pour réduire vos coûts.
+        </p>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="service-card">
+        <i class="ri-database-2-line service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Bientôt&nbsp;: Admin &amp; Backend</h3>
+        <p class="service-desc">
+          Actuellement en formation sur Node.js et language base de donné pour proposer des sites avec Dashboard complets pour admin.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+    <!-- ===== SECTION PORTFOLIO ===== -->
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+
+    <div class="portfolio-grid">
+
+      <!-- Projet 1 -->
+      <article id="projet-voiture" class="carte-projet">
         <a href="https://carloctest.infinityfreeapp.com" class="lien-carte" target="_blank" rel="noopener">
-            <img src="img/hero-loc.png" alt="Aperçu du site de location de voitures" class="hero-image" />
-            <div class="contenu-carte">
+          <img src="img/hero-loc.png" alt="Aperçu du site de location de voitures" class="hero-image">
+          <div class="contenu-carte">
             <h3 class="titre-projet">Site de location de voitures</h3>
             <p class="description-projet">
-                Dashboard d’administration pour ajouter des véhicules et page d’accueil listant toutes les voitures disponibles.
+              Dashboard d’administration pour ajouter des véhicules et page d’accueil listant toutes les voitures disponibles.
             </p>
-            </div>
+          </div>
         </a>
-        </article>
+      </article>
 
-        <!-- PROJET 2 : Site immobilier -->
-        <article class="carte-projet">
+      <!-- Projet 2 -->
+      <article id="projet-immobilier" class="carte-projet">
         <a href="https://vitrineimmo-test.netlify.app/" class="lien-carte" target="_blank" rel="noopener">
-            <img src="img/immo-vitrine.png" alt="Aperçu du site immobilier" class="hero-image" />
-            <div class="contenu-carte">
+          <img src="img/immo-vitrine.png" alt="Aperçu du site immobilier" class="hero-image">
+          <div class="contenu-carte">
             <h3 class="titre-projet">Site immobilier</h3>
             <p class="description-projet">
-                Vitrine immobilière avec listes d’annonces, filtres de recherche et pages détaillées pour chaque bien.
+              Vitrine avec listes d’annonces, filtres de recherche et pages détaillées pour chaque bien.
             </p>
-            </div>
+          </div>
         </a>
-        </article>
+      </article>
 
 
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- ===== SECTION À PROPOS ===== -->
+  <section id="a-propos" class="a-propos">
+    <h2 class="section-title">Qui suis-je&nbsp;?</h2>
+
+    <div class="apropos-wrapper">
+
+      <div class="apropos-content">
+        <h3 class="apropos-name">Hippolyte Diallo</h3>
+        <p class="apropos-text">
+            Étudiant à Lyon, je me forme de manière autodidacte au développement web.
+            Je mise sur la puissance de l’IA pour créer des sites rapides, modernes et accessibles a tout le monde.
+            Mon objectif : devenir développeur freelance à plein temps et accompagner mes clients dans leur croissance digitale.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SECTION CONTACT ===== -->
+  <footer id="contact" class="contact">
+    <h2 class="section-title">Me contacter</h2>
+
+    <ul class="contact-list">
+      <li>
+        <i class="ri-mail-line contact-icon" aria-hidden="true"></i>
+        <a href="mailto:hippolyte.devweb@gmail.com" class="contact-link">hippolyte.devweb@gmail.com</a>
+      </li>
+      <li>
+        <i class="ri-github-line contact-icon" aria-hidden="true"></i>
+        <a href="https://github.com/ippokuun" class="contact-link" target="_blank" rel="noopener">github.com/ippokuun</a>
+      </li>
+    </ul>
+  </footer>
+
 </body>
 </html>
