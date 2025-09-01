@@ -34,6 +34,9 @@ html {
 
 body {
   min-height: 100vh;
+  background-color: #ffffff; /* blanc forcé */
+  color: #000000;            /* texte noir */
+
 }
 
 a {
