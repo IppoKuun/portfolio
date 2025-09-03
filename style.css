@@ -308,26 +308,92 @@ main {
   color: #555555;
 }
 
-/* ============================================
-   À PROPOS
-   ============================================ */
 .a-propos {
-  padding: 0 1rem;
+  padding: 3rem 1rem;
+}
+
+.apropos-wrapper{
+  max-width: 800px;   /* au lieu de width: 1000px */
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.apropos-content{
+  max-width: 640px;   /* au lieu de width fixe */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;         /* évite les décalages */
 }
 
 
+/* TITRES DE SECTION — version unique et stable */
+.section-title{
+  /* taille responsive propre */
+  font-size: clamp(1.8rem, 2.2vw + 1rem, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
 
-/* Pour ne plus afficher l’image sans toucher au HTML */
-.photo-profil {
-  display: none;
+  /* centrage fiable sans dépendre du parent */
+  display: block;
+  width: fit-content;      /* le bloc prend la largeur du texte */
+  margin: 2.5rem auto 1rem;/* centre horizontal via auto */
+  text-align: center;      /* aligne le texte */
+}
+
+.section-title::after{
+  content: "";
+  display: block;
+  height: 3px;
+  width: 72px;             /* barre courte et propre (évite le %) */
+  margin: .6rem auto 0;    /* centrée sous le texte */
+  background: var(--color-primary);
+  border-radius: 999px;
 }
 
 
-.apropos-name{
-    align-items: center;
-    font-size: 2.2rem;
-
+.a-propos .section-title {
+  display: block;
+  text-align: center;
+    padding: 3rem 1rem;
+  text-align: center; /* ✅ ça centre le h2 dans sa section */
 }
+
+.apropos-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--color-text);
+}
+
+.apropos-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.apropos-text strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Bouton CTA optionnel */
+.apropos-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background-color var(--transition);
+}
+
 /* Et recentrer le contenu de la section "À propos" */
 .apropos-wrapper {
   display: flex;
@@ -341,12 +407,6 @@ main {
   text-align: center;
 }
 
-
-.apropos-content {
-  margin: 0 auto;
-  width: 750px;
-  padding: 2rem;
-}
 
 /* ============================================
    CONTACT
@@ -436,5 +496,138 @@ main {
     padding: 10px 100px; /* sur grand écran, tu remets le gros padding */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+  }
+}
+
+
+/* ===== A PROPOS — layout compact & rythmé ===== */
+.a-propos { 
+  padding: 2.5rem 1rem;
+}
+
+/* conteneur en grille: 1 colonne → 2 colonnes sur desktop */
+.apropos-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;            /* réduit l’espace vide */
+  border-top: 4px solid var(--color-primary);
+}
+
+.apropos-content{
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;      /* centre le texte sur mobile */
+}
+
+.apropos-name{
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.apropos-text{
+  color:#555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* liste de points de valeur */
+.apropos-points{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .6rem;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 520px;
+}
+.apropos-points li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-weight: 500;
+}
+.apropos-points i{
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+/* colonne droite: petites stats compactes */
+.apropos-side{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.apropos-card{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(90px, 1fr));
+  gap: .75rem;
+}
+.apropos-stat{
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: .75rem .5rem;
+  text-align: center;
+}
+.stat-number{
+  display:block;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.stat-label{
+  display:block;
+  font-size: .8rem;
+  color:#666;
+  margin-top: .25rem;
+}
+
+/* titres génériques : centrés + soulignement court */
+.section-title{
+  font-size: clamp(1.8rem, 2.2vw + 1rem, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 1rem;
+  text-align: center;
+}
+.section-title::after{
+  content:"";
+  display:block;
+  width:72px;              /* court = pas toute la largeur */
+  height:3px;
+  margin:.6rem auto 0;
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+
+/* Desktop: passe en 2 colonnes + aligne le texte à gauche côté contenu */
+@media (min-width: 900px){
+  .apropos-wrapper{
+    grid-template-columns: 1.3fr .7fr;  /* 60/40 */
+    align-items: center;
+    padding: 2rem;
+  }
+  .apropos-content{
+    text-align: left;
+    margin: 0;
+  }
+  .apropos-points{
+    grid-template-columns: 1fr 1fr;     /* deux colonnes, plus dense */
+    justify-items: start;
+    max-width: none;
+  }
+  .apropos-points li{
+    justify-content: flex-start;
   }
 }
